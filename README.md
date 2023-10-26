@@ -3,13 +3,13 @@ Automatically connect to Univ. Wi-Fi without bothering to authorize by hand!
 
 # Installing & Usage
 - Windows
-  1. Clone the repo
+  1. Clone (download) the repo
   2. Navigate to Windows/
   3. Click on install.bat
   4. done!
      
 - Linux
-  1. clone the repo
+  1. Clone the repo
   2. Navigate to Linux/
   3. run install.sh
   4. done!
