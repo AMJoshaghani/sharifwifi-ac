@@ -22,11 +22,11 @@ everytime you turn your system on, it'll sign you inside Sharif-WiFi!
 # ToDo
 - [x] Linux Support
 - - [x] Making a systemd unit (as startup)
-- - [x] Veryfing a cron-job
+- - [x] Verifiyng a cron-job
 - - [x] Checking for active connection
 - - [x] Identifying SSID
 - [x] Windoes Support
-- - [x] Veryfing a .bat script in startup
+- - [x] Verifying a .bat script in startup
 - - [ ] Checking auth result with scraping
 - - [ ] Identifying SSID
 - [ ] OSX Support
