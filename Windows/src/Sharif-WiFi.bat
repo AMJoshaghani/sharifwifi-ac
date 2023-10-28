@@ -19,12 +19,12 @@ GOTO :EOF
 
 :: sub workers
 :ERR
-ECHO "Failed."
+ECHO Failed.
 CALL :NOTIF "Sharif-WiFi" "Auth failed." "Error"
 EXIT /B 1
 
 :SUC
-ECHO "Succeed."
+ECHO Succeed.
 CALL :NOTIF "Sharif-WiFi" "Auth succeed." "Information"
 EXIT /B 0
 
