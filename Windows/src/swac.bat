@@ -5,23 +5,23 @@ SET "SADDR=net2.sharif.edu"
 USERNAME&PASSWORD
 
 :: main
-timeout /t 5 /nobreak > NUL
+timeout /t 10 /nobreak > NUL
 :PING
-PING google.com -n 1 -w 5000 > NUL
+PING sharif.edu -n 1 -w 5000 > NUL
 IF ERRORLEVEL 1 (GOTO PING)
 ECHO Authenticating...
-CURL -X POST -d "username=%USERNAME%&password=%PASS%" --ssl-no-revoke "%SADDR%/login" > NUL
+CURL -X POST -d "username=%USERNAME%&password=%PASS%" --ssl-no-revoke "https://%SADDR%/login" > NUL
 IF ERRORLEVEL 1 (CALL :ERR) ELSE (CALL :SUC)
 GOTO :EOF
 
 :: sub workers
 :ERR
-ECHO "Failed."
+ECHO Failed.
 CALL :NOTIF "Sharif-WiFi" "Auth failed." "Error"
 EXIT /B 1
 
 :SUC
-ECHO "Succeed."
+ECHO Succeed.
 CALL :NOTIF "Sharif-WiFi" "Auth succeed." "Information"
 EXIT /B 0
 
