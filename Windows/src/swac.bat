@@ -5,10 +5,13 @@ SET "SADDR=net2.sharif.edu"
 USERNAME&PASSWORD
 
 :: main
-timeout /t 10 /nobreak > NUL
+ECHO waiting for net to come online...
+timeout /t 5 /nobreak > NUL
 :PING
 PING sharif.edu -n 1 -w 5000 > NUL
 IF ERRORLEVEL 1 (GOTO PING)
+netsh wlan show interface | findstr /i "SSID" | findstr /i "Sharif-WiFi"
+IF ERRORLEVEL 1 (GOTO NONSHARIF)
 ECHO Authenticating...
 CURL -X POST -d "username=%USERNAME%&password=%PASS%" --ssl-no-revoke "https://%SADDR%/login" > NUL
 IF ERRORLEVEL 1 (CALL :ERR) ELSE (CALL :SUC)
@@ -16,13 +19,18 @@ GOTO :EOF
 
 :: sub workers
 :ERR
-ECHO Failed.
+ECHO "Failed."
 CALL :NOTIF "Sharif-WiFi" "Auth failed." "Error"
 EXIT /B 1
 
 :SUC
-ECHO Succeed.
+ECHO "Succeed."
 CALL :NOTIF "Sharif-WiFi" "Auth succeed." "Information"
+EXIT /B 0
+
+:NONSHARIF
+ECHO No Sharif-WiFi
+CALL :NOTIF "Sharif-WiFi" "Networking is present without Sharif-WiFi"
 EXIT /B 0
 
 :NOTIF
