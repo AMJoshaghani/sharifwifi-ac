@@ -1,4 +1,4 @@
-@echo off
+@ECHO off
 :: by AMJoshaghani @ amjoshaghani.ir
 :: declarations
 SET "SADDR=net2.sharif.edu"
