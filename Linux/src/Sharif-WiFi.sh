@@ -2,7 +2,7 @@
 set -o errexit -o nounset -o pipefail
 
 SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
-USERNAME='amir.joshaghani12'; PASS='AmirMj1383'
+
 SADDR="net2.sharif.edu"
 C=0; CM=1
 
