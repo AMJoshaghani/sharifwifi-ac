@@ -7,11 +7,11 @@ TITLE Sharif-WiFi - Auth
 
 :: main
 ECHO waiting for net to come online...
-timeout /t 5 /nobreak > NUL
+TIMEOUT /t 5 /nobreak > NUL
 :PING
 PING sharif.edu -n 1 -w 5000 > NUL
 IF ERRORLEVEL 1 (GOTO PING)
-netsh wlan show interface | findstr /i "SSID" | findstr /i "Sharif-WiFi"
+NETSH wlan show interface | findstr /i "SSID" | findstr /i "Sharif-WiFi"
 IF ERRORLEVEL 1 (GOTO NONSHARIF)
 ECHO Authenticating...
 CURL -X POST -d "username=%USERNAME%&password=%PASS%" --ssl-no-revoke "https://%SADDR%/login" > NUL
