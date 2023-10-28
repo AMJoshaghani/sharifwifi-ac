@@ -30,7 +30,7 @@ EXIT /B 0
 
 :NONSHARIF
 ECHO No Sharif-WiFi
-CALL :NOTIF "Sharif-WiFi" "Networking is present without Sharif-WiFi"
+CALL :NOTIF "Sharif-WiFi" "Networking is present without Sharif-WiFi" "Warning"
 EXIT /B 0
 
 :NOTIF
