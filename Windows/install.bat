@@ -10,7 +10,7 @@ SET /p PASS=<.tmp.txt & del .tmp.txt
 
 SET "FP=src\swac.bat"
 SET "TF=%temp%\swac.bat"
-COPY %FP% %TF%
+COPY %FP% %temp%
 powershell -Command "(gc %TF%) -replace 'USERNAME&PASSWORD', 'SET "USERNAME=%USERNAME%" && SET "PASS=%PASS%"' | Out-File -encoding ASCII %FP%"
 DEL %TF%
 
