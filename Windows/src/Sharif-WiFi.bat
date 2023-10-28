@@ -3,6 +3,7 @@
 :: declarations
 SET "SADDR=net2.sharif.edu"
 USERNAME&PASSWORD
+TITLE Sharif-WiFi - Auth
 
 :: main
 ECHO waiting for net to come online...
