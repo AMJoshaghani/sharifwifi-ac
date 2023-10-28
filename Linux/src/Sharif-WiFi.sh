@@ -1,19 +1,19 @@
 #!/bin/bash
-# By AMJoshaghani @ amjoshaghani.ir; Under GPLv.3
 set -o errexit -o nounset -o pipefail
-SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
 
+SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
+USERNAME='amir.joshaghani12'; PASS='AmirMj1383'
 SADDR="net2.sharif.edu"
 C=0; CM=1
 
 function main {
 	msg "Checking Connection..."
-	CR=$(check_conn)
+	CR=$(check_conn && echo 0) || $(echo 1)
 	test $CR -eq 0 || check_net
     msg "Connection established"
 
     W_NAME=$(iwgetid -r)
-    # msg "SSID: "$W_NAME
+    msg "SSID: "$W_NAME
 
     if [ $(echo $W_NAME | grep "Sharif-WiFi") ]; then
         # A more secure way is to check UUID instead of SSID:
@@ -21,7 +21,7 @@ function main {
 
         SERVER_RESPONSE=$(curl -X POST -d \
             "username=$USERNAME&password=$PASS"\
-            "$SADDR/login")
+            "https://$SADDR/login")
 
         R=$(echo $SERVER_RESPONSE | sed -n \
             "/<meta http-equiv=\"refresh\" content=\"2; url=http:\/\/$SADDR\/status\">/p")
