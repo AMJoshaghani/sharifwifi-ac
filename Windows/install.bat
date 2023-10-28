@@ -9,8 +9,8 @@ powershell -Command $pword = read-host "Your password " -AsSecureString ; ^
         [System.Runtime.InteropServices.Marshal]::PtrToStringAuto($BSTR) > .tmp.txt 
 SET /p PASS=<.tmp.txt & del .tmp.txt
 
-SET "FP=%SCRIPT_PATH%\src\swac.bat"
-SET "TF=%temp%\swac.bat"
+SET "FP=%SCRIPT_PATH%\src\Sharif-WiFi.bat"
+SET "TF=%temp%\Sharif-WiFi.bat"
 COPY %FP% %temp%
 powershell -Command "(gc %TF%) -replace 'USERNAME&PASSWORD', 'SET "USERNAME=%USERNAME%" && SET "PASS=%PASS%"' | Out-File -encoding ASCII %FP%"
 DEL %TF%
