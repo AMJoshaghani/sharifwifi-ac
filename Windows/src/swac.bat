@@ -10,7 +10,7 @@ timeout /t 5 /nobreak > NUL
 PING google.com -n 1 -w 5000 > NUL
 IF ERRORLEVEL 1 (GOTO PING)
 ECHO Authenticating...
-CURL -X POST -d "username=%USERNAME%&password=%PASS%" "%SADDR%/login" > NUL
+CURL -X POST -d "username=%USERNAME%&password=%PASS%" --ssl-no-revoke "%SADDR%/login" > NUL
 IF ERRORLEVEL 1 (CALL :ERR) ELSE (CALL :SUC)
 GOTO :EOF
 
