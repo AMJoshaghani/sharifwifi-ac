@@ -3,13 +3,13 @@ Automatically connect to Univ. Wi-Fi without bothering to authorize by hand!
 
 # Installing & Usage
 - Windows
-  1. [Clone](https://codeload.github.com/AMJoshaghani/sharifwifi-ac/zip/refs/tags/v0.0.1) the repo
+  1. [Clone](https://github.com/AMJoshaghani/sharifwifi-ac/releases/latest/) the repo
   2. Navigate to Windows/
   3. Click on install.bat
   4. done!
      
 - Linux
-  1. [Clone](https://codeload.github.com/AMJoshaghani/sharifwifi-ac/zip/refs/tags/v0.0.1) the repo
+  1. [Clone](https://github.com/AMJoshaghani/sharifwifi-ac/releases/latest/) the repo
   2. Navigate to Linux/
   3. run install.sh
   4. done!
@@ -28,6 +28,6 @@ everytime you turn your system on, it'll sign you inside Sharif-WiFi!
 - [x] Windows Support
 - - [x] Verifying a .bat script in startup
 - - [ ] Checking auth result with scraping
-- - [ ] Identifying SSID
+- - [x] Identifying SSID
 - [ ] OSX Support
 - - [ ] (to be known...)
