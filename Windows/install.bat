@@ -4,7 +4,7 @@
 :: main
 SET SCRIPT_PATH=%~dp0
 SET /p USERNAME=Enter you username: 
-powershell -Command $pword = read-host "Your password " -AsSecureString ; ^
+POWERSHELL -Command $pword = read-host "Your password " -AsSecureString ; ^
     $BSTR=[System.Runtime.InteropServices.Marshal]::SecureStringToBSTR($pword) ; ^
         [System.Runtime.InteropServices.Marshal]::PtrToStringAuto($BSTR) > .tmp.txt 
 SET /p PASS=<.tmp.txt & del .tmp.txt
