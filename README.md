@@ -3,15 +3,15 @@ Automatically connect to Univ. Wi-Fi without bothering to authorize by hand!
 
 # Installing & Usage
 - Windows
-  1. [Clone](https://github.com/AMJoshaghani/sharifwifi-ac/releases/latest/) the repo
-  2. Navigate to Windows/
-  3. Click on install.bat
+  1. [Download Windows.zip](https://github.com/AMJoshaghani/sharifwifi-ac/releases/latest/)
+  2. Click on install.bat
+  3. Enter your username & password
   4. done!
      
 - Linux
-  1. [Clone](https://github.com/AMJoshaghani/sharifwifi-ac/releases/latest/) the repo
-  2. Navigate to Linux/
-  3. run install.sh
+  1. [Download Linux.tar.xz](https://github.com/AMJoshaghani/sharifwifi-ac/releases/latest/)
+  2. run install.sh
+  3. Enter your username & password
   4. done!
 
 - OSX (Still working on it...!)
